@@ -21,7 +21,7 @@ const Experience = () => {
                 </div>
                 <div className="job">
                     <h3>Software Engineer @ SecruriumFox</h3>
-                    <p className="range">2021</p>
+                    <p className="range"></p>
                     <ul>
                         <li>Developed a full-stack inventory tracking application to improve operational visibility across product, order, and customer data. Integrated user interfaces with backend services and databases to enable real-time stock updates and reliable data synchronization. Enhanced system stability and team efficiency through automated testing, clear documentation, and close collaboration on requirement clarification.</li>
                     </ul>
