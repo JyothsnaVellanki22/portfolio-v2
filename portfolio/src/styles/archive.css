@@ -1,101 +1,330 @@
-/* Archive Page */
+/* -------------------------------- */
+/* Archive Page                     */
+/* -------------------------------- */
+
 .archive-page {
+    position: relative;
+
     padding: 100px 50px;
-    max-width: 1200px;
+
+    max-width: 1250px;
+
     margin: 0 auto;
 }
 
 .archive-header {
-    margin-bottom: 80px;
+    margin-bottom: 70px;
 }
+
+/* -------------------------------- */
+/* Back Link                        */
+/* -------------------------------- */
 
 .back-link {
     color: var(--green);
+
     font-family: var(--font-mono);
     font-size: var(--fz-md);
+
     margin-bottom: 20px;
-    display: inline-block;
+
+    display: inline-flex;
+    align-items: center;
+
+    transition:
+        transform 0.3s var(--motion-smooth),
+        color 0.3s ease;
 }
 
+.back-link:hover {
+    transform: translateX(-5px);
+
+    color: var(--violet-light);
+}
+
+/* -------------------------------- */
+/* Archive Heading                  */
+/* -------------------------------- */
+
 .big-heading {
-    font-size: 60px;
+    position: relative;
+
+    display: inline-block;
+
+    font-size: clamp(
+        42px,
+        7vw,
+        68px
+    );
+
     color: var(--lightest-slate);
-    margin-bottom: 10px;
+
+    margin-bottom: 14px;
+}
+
+.big-heading::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 45%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--violet),
+            transparent
+        );
 }
 
 .subtitle {
     color: var(--green);
+
     font-family: var(--font-mono);
+
+    max-width: 750px;
+
+    font-size: var(--fz-sm);
+
+    margin-top: 22px;
 }
+
+/* -------------------------------- */
+/* Archive Table Container          */
+/* -------------------------------- */
+
+.archive-content {
+    position: relative;
+
+    overflow-x: auto;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.05);
+
+    border-radius: 14px;
+
+    background:
+        rgba(255, 255, 255, 0.01);
+
+    box-shadow:
+        0 25px 60px
+        rgba(0, 0, 0, 0.14);
+}
+
+/* -------------------------------- */
+/* Table                            */
+/* -------------------------------- */
 
 table {
     width: 100%;
+
     border-collapse: collapse;
 }
 
 th,
 td {
-    padding: 15px 10px;
+    position: relative;
+
+    padding: 18px 14px;
+
     text-align: left;
-    border-bottom: 1px solid var(--light-navy);
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.05);
 }
 
 th {
     color: var(--slate);
+
     font-family: var(--font-mono);
-    font-size: var(--fz-md);
+
+    font-size: var(--fz-xs);
+
     font-weight: 400;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+
+    background:
+        rgba(255, 255, 255, 0.018);
 }
 
 td {
     color: var(--light-slate);
+
     font-size: var(--fz-md);
 }
 
+/* Remove border from final row */
+.archive-content tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* -------------------------------- */
+/* Project Row Motion               */
+/* -------------------------------- */
+
+.archive-content tbody tr {
+    position: relative;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.35s var(--motion-smooth);
+}
+
+.archive-content tbody tr:hover {
+    background-color:
+        rgba(139, 92, 246, 0.045);
+}
+
+/* Project title activates */
+.archive-content tbody tr:hover .title {
+    color: var(--violet-light);
+}
+
+/* Year moves slightly when row activates */
+.archive-content tbody tr:hover td:first-child {
+    padding-left: 20px;
+}
+
+.archive-content tbody td:first-child {
+    transition:
+        padding-left 0.35s var(--motion-smooth);
+}
+
+/* -------------------------------- */
+/* Year                             */
+/* -------------------------------- */
+
 .year {
     color: var(--green);
+
     font-family: var(--font-mono);
+
     font-size: var(--fz-sm);
 }
 
+/* -------------------------------- */
+/* Project Title                    */
+/* -------------------------------- */
+
 .title {
     color: var(--lightest-slate);
+
     font-weight: 600;
-    font-size: var(--fz-xl);
+
+    font-size: var(--fz-lg);
+
+    transition:
+        color 0.3s ease;
 }
 
+/* -------------------------------- */
+/* Project Description              */
+/* -------------------------------- */
+
+.description {
+    max-width: 360px;
+
+    color: var(--slate);
+
+    font-size: var(--fz-sm);
+
+    line-height: 1.6;
+}
+
+/* -------------------------------- */
+/* Technology Tags                  */
+/* -------------------------------- */
+
 .tech-tag {
+    position: relative;
+
+    overflow: hidden;
+
     font-family: var(--font-mono);
+
     font-size: var(--fz-xs);
+
     color: var(--green);
-    background-color: rgba(139, 92, 246, 0.1);
-    /* Violet with low opacity */
-    padding: 5px 12px;
+
+    background-color:
+        rgba(139, 92, 246, 0.08);
+
+    border:
+        1px solid
+        rgba(139, 92, 246, 0.12);
+
+    padding: 6px 12px;
+
     border-radius: 9999px;
-    /* Pill shape */
+
     display: inline-block;
+
     margin-right: 8px;
     margin-bottom: 6px;
+
     line-height: 1;
-    transition: var(--transition);
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .tech-tag:hover {
-    background-color: rgba(139, 92, 246, 0.2);
+    transform: translateY(-3px);
+
+    background-color:
+        rgba(139, 92, 246, 0.16);
+
+    border-color:
+        rgba(139, 92, 246, 0.4);
+
+    box-shadow:
+        0 5px 18px
+        rgba(139, 92, 246, 0.12);
 }
 
 .tech-tag:not(:last-child)::after {
     content: none;
 }
 
+/* -------------------------------- */
+/* Project Links                    */
+/* -------------------------------- */
+
+.project-link a,
 .links a {
     color: var(--light-slate);
-    font-size: 20px;
+
+    font-family: var(--font-mono);
+
+    font-size: var(--fz-sm);
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s var(--motion-smooth);
 }
 
+.project-link a:hover,
 .links a:hover {
     color: var(--green);
+
+    transform: translateY(-2px);
 }
+
+/* -------------------------------- */
+/* Responsive Visibility            */
+/* -------------------------------- */
 
 .hide-on-mobile {
     display: none;
@@ -104,5 +333,63 @@ td {
 @media (min-width: 768px) {
     .hide-on-mobile {
         display: table-cell;
+    }
+}
+
+/* -------------------------------- */
+/* Mobile Archive                   */
+/* -------------------------------- */
+
+@media (max-width: 767px) {
+    .archive-page {
+        padding: 70px 22px;
+    }
+
+    .archive-header {
+        margin-bottom: 45px;
+    }
+
+    .big-heading {
+        font-size: clamp(
+            38px,
+            12vw,
+            52px
+        );
+    }
+
+    th,
+    td {
+        padding: 15px 10px;
+    }
+
+    .title {
+        font-size: var(--fz-md);
+    }
+
+    .archive-content tbody tr:hover td:first-child {
+        padding-left: 10px;
+    }
+}
+
+/* -------------------------------- */
+/* Reduced Motion Accessibility     */
+/* -------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .back-link,
+    .archive-content tbody tr,
+    .archive-content tbody td:first-child,
+    .title,
+    .tech-tag,
+    .project-link a,
+    .links a {
+        transition: none;
+    }
+
+    .back-link:hover,
+    .tech-tag:hover,
+    .project-link a:hover,
+    .links a:hover {
+        transform: none;
     }
 }
