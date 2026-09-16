@@ -336,6 +336,49 @@ textarea:focus-visible {
     z-index: 1;
 }
 
+/* =========================================
+   ABOUT SECTION MOTION
+   ========================================= */
+
+.about-section .content {
+    position: relative;
+}
+
+/* Individual About paragraphs */
+.about-section .content p {
+    margin-top: 0;
+    margin-bottom: 24px;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s var(--motion-smooth);
+}
+
+/* Small interaction when hovering a paragraph */
+.about-section .content p:hover {
+    color: var(--light-slate);
+
+    transform: translateX(4px);
+}
+
+/* Highlight important technical phrases */
+.about-section strong {
+    position: relative;
+
+    color: var(--lightest-slate);
+
+    transition:
+        color 0.25s ease,
+        text-shadow 0.25s ease;
+}
+
+.about-section strong:hover {
+    color: var(--violet-light);
+
+    text-shadow:
+        0 0 18px rgba(139, 92, 246, 0.18);
+}
+
 /* -------------------------------- */
 /* Reduced Motion Accessibility     */
 /* -------------------------------- */
@@ -361,5 +404,8 @@ textarea:focus-visible {
         transform: none;
         filter: none;
     }
-}
 
+    .about-section .content p:hover {
+        transform: none;
+    }
+}
