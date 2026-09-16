@@ -5,6 +5,7 @@ import About from './components/About';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Archive from './components/Archive';
+import CursorGlow from './components/CursorGlow';
 import './App.css';
 
 import ChatWidget from './components/ChatWidget';
