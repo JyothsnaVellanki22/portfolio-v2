@@ -1,36 +1,70 @@
 import React from 'react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { SiVercel } from 'react-icons/si';
+
+import {
+    FaGithub,
+    FaLinkedin
+} from 'react-icons/fa';
+
+import {
+    SiVercel
+} from 'react-icons/si';
 
 const Sidebar = () => {
     return (
         <header className="sidebar">
             <div className="sidebar-content">
 
-                <h1>Jyothsna</h1>
+                <div className="identity">
+                    <h1>
+                        Jyothsna
+                    </h1>
 
-                <h2>Software Engineer</h2>
+                    <span
+                        className="identity-signal"
+                        aria-hidden="true"
+                    />
 
-                <p>
-                    AI Systems • AI for Security • Full Stack
-                </p>
+                    <h2>
+                        Software Engineer
+                    </h2>
 
-                <nav className="nav">
+                    <p className="identity-focus">
+                        AI Systems
+                        <span>•</span>
+                        AI for Security
+                        <span>•</span>
+                        Full Stack
+                    </p>
+                </div>
+
+                <nav
+                    className="nav"
+                    aria-label="Portfolio navigation"
+                >
                     <ul>
                         <li>
-                            <a href="#about" className="nav-link">
+                            <a
+                                href="#about"
+                                className="nav-link"
+                            >
                                 About
                             </a>
                         </li>
 
                         <li>
-                            <a href="#experience" className="nav-link">
+                            <a
+                                href="#experience"
+                                className="nav-link"
+                            >
                                 Experience
                             </a>
                         </li>
 
                         <li>
-                            <a href="#projects" className="nav-link">
+                            <a
+                                href="#projects"
+                                className="nav-link"
+                            >
                                 Projects
                             </a>
                         </li>
@@ -39,7 +73,6 @@ const Sidebar = () => {
 
                 <div className="socials">
 
-                    {/* GitHub */}
                     <a
                         href="https://github.com/JyothsnaVellanki22"
                         target="_blank"
@@ -51,7 +84,6 @@ const Sidebar = () => {
                         <FaGithub />
                     </a>
 
-                    {/* LinkedIn */}
                     <a
                         href="https://www.linkedin.com/in/jyothsna-vellanki/"
                         target="_blank"
@@ -63,7 +95,6 @@ const Sidebar = () => {
                         <FaLinkedin />
                     </a>
 
-                    {/* Vercel */}
                     <a
                         href="https://vercel.com/jyothsna-s-projects-71692b4a"
                         target="_blank"
