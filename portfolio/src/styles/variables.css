@@ -1,26 +1,45 @@
 :root {
-  /* Renamed/remapped for the new Dark Grey/Violet theme */
+  /* Core Theme */
   --navy: #121212;
-  /* Main Background: Darker, closer to black */
   --light-navy: #1E1E1E;
-  /* Secondary Background: Card/Hover states */
   --lightest-navy: #2D2D2D;
-  /* Tertiary: Borders or lighter cards */
 
+  /* Text */
   --slate: #A1A1AA;
-  /* Muted Text: Neutral grey */
   --light-slate: #D4D4D8;
-  /* Secondary Text: Lighter grey */
   --lightest-slate: #F4F4F5;
-  /* Primary Text: Almost white */
   --white: #FFFFFF;
 
+  /* Primary Accent */
   --green: #8B5CF6;
-  /* Accent: Violet (Replcing Teal) */
 
-  --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace;
+  /* Extended Violet System */
+  --violet: #8B5CF6;
+  --violet-light: #A78BFA;
+  --violet-dark: #6D28D9;
 
+  --violet-soft: rgba(139, 92, 246, 0.08);
+  --violet-medium: rgba(139, 92, 246, 0.18);
+  --violet-border: rgba(139, 92, 246, 0.28);
+  --violet-glow: rgba(139, 92, 246, 0.20);
+
+  /* Fonts */
+  --font-sans:
+    'Outfit',
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+
+  --font-mono:
+    'JetBrains Mono',
+    'Fira Code',
+    'Roboto Mono',
+    monospace;
+
+  /* Font Sizes */
   --fz-xxs: 12px;
   --fz-xs: 13px;
   --fz-sm: 14px;
@@ -30,13 +49,18 @@
   --fz-xxl: 22px;
   --fz-heading: 32px;
 
+  /* Layout */
   --border-radius: 8px;
-  /* Slightly more rounded for modern feel */
   --nav-height: 100px;
   --nav-scroll-height: 70px;
 
   --tab-height: 42px;
   --tab-width: 120px;
 
-  --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  /* Motion */
+  --transition:
+    all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  --motion-smooth:
+    cubic-bezier(0.16, 1, 0.3, 1);
 }
