@@ -1,35 +1,50 @@
-/* -------------------------------- */
-/* Archive Page                     */
-/* -------------------------------- */
+/* =========================================
+   ARCHIVE PAGE
+   ========================================= */
 
 .archive-page {
     position: relative;
 
-    padding: 100px 50px;
-
+    width: 100%;
     max-width: 1250px;
 
     margin: 0 auto;
+    padding: 100px 50px;
 }
 
+
+/* =========================================
+   ARCHIVE HEADER
+   ========================================= */
+
 .archive-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 100%;
+
     margin-bottom: 70px;
 }
 
-/* -------------------------------- */
-/* Back Link                        */
-/* -------------------------------- */
+
+/* =========================================
+   BACK LINK
+   ========================================= */
 
 .back-link {
+    display: inline-flex;
+    align-items: center;
+
+    width: fit-content;
+
+    margin: 0 0 28px 0;
+
     color: var(--green);
 
     font-family: var(--font-mono);
     font-size: var(--fz-md);
-
-    margin-bottom: 20px;
-
-    display: inline-flex;
-    align-items: center;
+    line-height: 1.4;
 
     transition:
         transform 0.3s var(--motion-smooth),
@@ -37,19 +52,26 @@
 }
 
 .back-link:hover {
-    transform: translateX(-5px);
-
     color: var(--violet-light);
+
+    transform: translateX(-5px);
 }
 
-/* -------------------------------- */
-/* Archive Heading                  */
-/* -------------------------------- */
+
+/* =========================================
+   ARCHIVE MAIN HEADING
+   ========================================= */
 
 .big-heading {
     position: relative;
 
-    display: inline-block;
+    display: block;
+
+    width: fit-content;
+
+    margin: 0 0 32px 0;
+
+    color: var(--lightest-slate);
 
     font-size: clamp(
         42px,
@@ -57,10 +79,13 @@
         68px
     );
 
-    color: var(--lightest-slate);
+    font-weight: 700;
 
-    margin-bottom: 14px;
+    line-height: 1.05;
 }
+
+
+/* Violet underline below heading */
 
 .big-heading::after {
     content: "";
@@ -68,7 +93,7 @@
     position: absolute;
 
     left: 0;
-    bottom: -8px;
+    bottom: -10px;
 
     width: 45%;
     height: 2px;
@@ -81,24 +106,36 @@
         );
 }
 
+
+/* =========================================
+   ARCHIVE SUBTITLE
+   ========================================= */
+
 .subtitle {
+    display: block;
+
+    width: 100%;
+    max-width: 750px;
+
+    margin: 0;
+
     color: var(--green);
 
     font-family: var(--font-mono);
-
-    max-width: 750px;
-
     font-size: var(--fz-sm);
 
-    margin-top: 22px;
+    line-height: 1.7;
 }
 
-/* -------------------------------- */
-/* Archive Table Container          */
-/* -------------------------------- */
+
+/* =========================================
+   ARCHIVE TABLE CONTAINER
+   ========================================= */
 
 .archive-content {
     position: relative;
+
+    width: 100%;
 
     overflow-x: auto;
 
@@ -116,36 +153,46 @@
         rgba(0, 0, 0, 0.14);
 }
 
-/* -------------------------------- */
-/* Table                            */
-/* -------------------------------- */
 
-table {
+/* =========================================
+   TABLE
+   ========================================= */
+
+.archive-content table {
     width: 100%;
 
     border-collapse: collapse;
 }
 
-th,
-td {
+
+/* =========================================
+   TABLE CELLS
+   ========================================= */
+
+.archive-content th,
+.archive-content td {
     position: relative;
 
     padding: 18px 14px;
 
     text-align: left;
+    vertical-align: middle;
 
     border-bottom:
         1px solid
         rgba(255, 255, 255, 0.05);
 }
 
-th {
+
+/* =========================================
+   TABLE HEADER
+   ========================================= */
+
+.archive-content th {
     color: var(--slate);
 
     font-family: var(--font-mono);
-
     font-size: var(--fz-xs);
-
     font-weight: 400;
 
     text-transform: uppercase;
@@ -156,79 +203,99 @@ th {
         rgba(255, 255, 255, 0.018);
 }
 
-td {
+
+/* =========================================
+   TABLE DATA
+   ========================================= */
+
+.archive-content td {
     color: var(--light-slate);
 
     font-size: var(--fz-md);
 }
 
-/* Remove border from final row */
+
+/* Remove border from last row */
+
 .archive-content tbody tr:last-child td {
     border-bottom: none;
 }
 
-/* -------------------------------- */
-/* Project Row Motion               */
-/* -------------------------------- */
+
+/* =========================================
+   PROJECT ROW MOTION
+   ========================================= */
 
 .archive-content tbody tr {
     position: relative;
 
     transition:
-        background-color 0.3s ease,
-        transform 0.35s var(--motion-smooth);
+        background-color 0.3s ease;
 }
+
+
+/* Row activation */
 
 .archive-content tbody tr:hover {
     background-color:
         rgba(139, 92, 246, 0.045);
 }
 
+
 /* Project title activates */
+
 .archive-content tbody tr:hover .title {
     color: var(--violet-light);
 }
 
-/* Year moves slightly when row activates */
+
+/* Year moves slightly */
+
+.archive-content tbody td:first-child {
+    transition:
+        padding-left 0.35s
+        var(--motion-smooth);
+}
+
 .archive-content tbody tr:hover td:first-child {
     padding-left: 20px;
 }
 
-.archive-content tbody td:first-child {
-    transition:
-        padding-left 0.35s var(--motion-smooth);
-}
 
-/* -------------------------------- */
-/* Year                             */
-/* -------------------------------- */
+/* =========================================
+   YEAR
+   ========================================= */
 
 .year {
     color: var(--green);
 
     font-family: var(--font-mono);
-
     font-size: var(--fz-sm);
+
+    white-space: nowrap;
 }
 
-/* -------------------------------- */
-/* Project Title                    */
-/* -------------------------------- */
+
+/* =========================================
+   PROJECT TITLE
+   ========================================= */
 
 .title {
     color: var(--lightest-slate);
 
+    font-size: var(--fz-lg);
     font-weight: 600;
 
-    font-size: var(--fz-lg);
+    line-height: 1.45;
 
     transition:
         color 0.3s ease;
 }
 
-/* -------------------------------- */
-/* Project Description              */
-/* -------------------------------- */
+
+/* =========================================
+   PROJECT DESCRIPTION
+   ========================================= */
 
 .description {
     max-width: 360px;
@@ -240,36 +307,45 @@ td {
     line-height: 1.6;
 }
 
-/* -------------------------------- */
-/* Technology Tags                  */
-/* -------------------------------- */
+
+/* =========================================
+   TECHNOLOGY COLUMN
+   ========================================= */
+
+.tech {
+    min-width: 300px;
+}
+
+
+/* =========================================
+   TECHNOLOGY TAGS
+   ========================================= */
 
 .tech-tag {
     position: relative;
 
+    display: inline-block;
+
     overflow: hidden;
 
-    font-family: var(--font-mono);
+    margin-right: 8px;
+    margin-bottom: 6px;
 
-    font-size: var(--fz-xs);
-
-    color: var(--green);
-
-    background-color:
-        rgba(139, 92, 246, 0.08);
+    padding: 6px 12px;
 
     border:
         1px solid
         rgba(139, 92, 246, 0.12);
 
-    padding: 6px 12px;
-
     border-radius: 9999px;
 
-    display: inline-block;
+    background-color:
+        rgba(139, 92, 246, 0.08);
 
-    margin-right: 8px;
-    margin-bottom: 6px;
+    color: var(--green);
+
+    font-family: var(--font-mono);
+    font-size: var(--fz-xs);
 
     line-height: 1;
 
@@ -279,6 +355,9 @@ td {
         border-color 0.25s ease,
         box-shadow 0.25s ease;
 }
+
+
+/* Tech tag hover */
 
 .tech-tag:hover {
     transform: translateY(-3px);
@@ -294,26 +373,34 @@ td {
         rgba(139, 92, 246, 0.12);
 }
 
+
 .tech-tag:not(:last-child)::after {
     content: none;
 }
 
-/* -------------------------------- */
-/* Project Links                    */
-/* -------------------------------- */
+
+/* =========================================
+   PROJECT LINKS
+   ========================================= */
+
+.project-link {
+    white-space: nowrap;
+}
+
 
 .project-link a,
 .links a {
     color: var(--light-slate);
 
     font-family: var(--font-mono);
-
     font-size: var(--fz-sm);
 
     transition:
         color 0.25s ease,
-        transform 0.25s var(--motion-smooth);
+        transform 0.25s
+        var(--motion-smooth);
 }
+
 
 .project-link a:hover,
 .links a:hover {
@@ -322,60 +409,183 @@ td {
     transform: translateY(-2px);
 }
 
-/* -------------------------------- */
-/* Responsive Visibility            */
-/* -------------------------------- */
+
+/* =========================================
+   MOBILE VISIBILITY
+   ========================================= */
 
 .hide-on-mobile {
     display: none;
 }
 
+
 @media (min-width: 768px) {
+
     .hide-on-mobile {
         display: table-cell;
     }
 }
 
-/* -------------------------------- */
-/* Mobile Archive                   */
-/* -------------------------------- */
 
-@media (max-width: 767px) {
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 1024px) {
+
     .archive-page {
-        padding: 70px 22px;
+        padding:
+            90px 35px;
     }
 
     .archive-header {
-        margin-bottom: 45px;
+        margin-bottom:
+            60px;
     }
 
-    .big-heading {
-        font-size: clamp(
-            38px,
-            12vw,
-            52px
-        );
-    }
-
-    th,
-    td {
-        padding: 15px 10px;
-    }
-
-    .title {
-        font-size: var(--fz-md);
-    }
-
-    .archive-content tbody tr:hover td:first-child {
-        padding-left: 10px;
+    .tech {
+        min-width:
+            250px;
     }
 }
 
-/* -------------------------------- */
-/* Reduced Motion Accessibility     */
-/* -------------------------------- */
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 767px) {
+
+    .archive-page {
+        padding:
+            70px 22px;
+    }
+
+
+    /* Header */
+
+    .archive-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        margin-bottom:
+            45px;
+    }
+
+
+    /* Back link */
+
+    .back-link {
+        margin-bottom:
+            24px;
+
+        font-size:
+            var(--fz-sm);
+    }
+
+
+    /* Main heading */
+
+    .big-heading {
+        display: block;
+
+        margin:
+            0 0 30px 0;
+
+        font-size:
+            clamp(
+                38px,
+                12vw,
+                52px
+            );
+
+        line-height:
+            1.05;
+    }
+
+
+    /* Subtitle */
+
+    .subtitle {
+        margin:
+            0;
+
+        font-size:
+            var(--fz-xs);
+
+        line-height:
+            1.7;
+    }
+
+
+    /* Table */
+
+    .archive-content th,
+    .archive-content td {
+        padding:
+            15px 10px;
+    }
+
+
+    .archive-content th {
+        font-size:
+            var(--fz-xxs);
+    }
+
+
+    .archive-content td {
+        font-size:
+            var(--fz-sm);
+    }
+
+
+    .title {
+        font-size:
+            var(--fz-md);
+    }
+
+
+    /* Disable year movement on mobile */
+
+    .archive-content tbody tr:hover td:first-child {
+        padding-left:
+            10px;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    .archive-page {
+        padding:
+            60px 16px;
+    }
+
+
+    .big-heading {
+        font-size:
+            40px;
+    }
+
+
+    .archive-header {
+        margin-bottom:
+            40px;
+    }
+}
+
+
+/* =========================================
+   REDUCED MOTION ACCESSIBILITY
+   ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
     .back-link,
     .archive-content tbody tr,
     .archive-content tbody td:first-child,
@@ -385,6 +595,7 @@ td {
     .links a {
         transition: none;
     }
+
 
     .back-link:hover,
     .tech-tag:hover,
