@@ -23,7 +23,7 @@ const Experience = () => {
         {
             company: 'Coke One North America (CONA Services)',
             role: 'Software Engineer',
-            range: 'May 2025 – Jan 2026',
+            range: 'May 2025 – Apr 2026',
             description: (
                 <>
                     Engineered enterprise applications and an{' '}
