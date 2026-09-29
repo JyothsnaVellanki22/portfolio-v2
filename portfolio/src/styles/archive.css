@@ -1,0 +1,606 @@
+/* =========================================
+   ARCHIVE PAGE
+   ========================================= */
+
+.archive-page {
+    position: relative;
+
+    width: 100%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+    padding: 100px 50px;
+}
+
+
+/* =========================================
+   ARCHIVE HEADER
+   ========================================= */
+
+.archive-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 100%;
+
+    margin-bottom: 70px;
+}
+
+
+/* =========================================
+   BACK LINK
+   ========================================= */
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+
+    width: fit-content;
+
+    margin: 0 0 28px 0;
+
+    color: var(--green);
+
+    font-family: var(--font-mono);
+    font-size: var(--fz-md);
+    line-height: 1.4;
+
+    transition:
+        transform 0.3s var(--motion-smooth),
+        color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--violet-light);
+
+    transform: translateX(-5px);
+}
+
+
+/* =========================================
+   ARCHIVE MAIN HEADING
+   ========================================= */
+
+.big-heading {
+    position: relative;
+
+    display: block;
+
+    width: fit-content;
+
+    margin: 0 0 32px 0;
+
+    color: var(--lightest-slate);
+
+    font-size: clamp(
+        42px,
+        7vw,
+        68px
+    );
+
+    font-weight: 700;
+
+    line-height: 1.05;
+}
+
+
+/* Violet underline below heading */
+
+.big-heading::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -10px;
+
+    width: 45%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--violet),
+            transparent
+        );
+}
+
+
+/* =========================================
+   ARCHIVE SUBTITLE
+   ========================================= */
+
+.subtitle {
+    display: block;
+
+    width: 100%;
+    max-width: 750px;
+
+    margin: 0;
+
+    color: var(--green);
+
+    font-family: var(--font-mono);
+    font-size: var(--fz-sm);
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   ARCHIVE TABLE CONTAINER
+   ========================================= */
+
+.archive-content {
+    position: relative;
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.05);
+
+    border-radius: 14px;
+
+    background:
+        rgba(255, 255, 255, 0.01);
+
+    box-shadow:
+        0 25px 60px
+        rgba(0, 0, 0, 0.14);
+}
+
+
+/* =========================================
+   TABLE
+   ========================================= */
+
+.archive-content table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+
+/* =========================================
+   TABLE CELLS
+   ========================================= */
+
+.archive-content th,
+.archive-content td {
+    position: relative;
+
+    padding: 18px 14px;
+
+    text-align: left;
+    vertical-align: middle;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.05);
+}
+
+
+/* =========================================
+   TABLE HEADER
+   ========================================= */
+
+.archive-content th {
+    color: var(--slate);
+
+    font-family: var(--font-mono);
+    font-size: var(--fz-xs);
+    font-weight: 400;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+
+    background:
+        rgba(255, 255, 255, 0.018);
+}
+
+
+/* =========================================
+   TABLE DATA
+   ========================================= */
+
+.archive-content td {
+    color: var(--light-slate);
+
+    font-size: var(--fz-md);
+}
+
+
+/* Remove border from last row */
+
+.archive-content tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================
+   PROJECT ROW MOTION
+   ========================================= */
+
+.archive-content tbody tr {
+    position: relative;
+
+    transition:
+        background-color 0.3s ease;
+}
+
+
+/* Row activation */
+
+.archive-content tbody tr:hover {
+    background-color:
+        rgba(139, 92, 246, 0.045);
+}
+
+
+/* Project title activates */
+
+.archive-content tbody tr:hover .title {
+    color: var(--violet-light);
+}
+
+
+/* Year moves slightly */
+
+.archive-content tbody td:first-child {
+    transition:
+        padding-left 0.35s
+        var(--motion-smooth);
+}
+
+.archive-content tbody tr:hover td:first-child {
+    padding-left: 20px;
+}
+
+
+/* =========================================
+   YEAR
+   ========================================= */
+
+.year {
+    color: var(--green);
+
+    font-family: var(--font-mono);
+    font-size: var(--fz-sm);
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   PROJECT TITLE
+   ========================================= */
+
+.title {
+    color: var(--lightest-slate);
+
+    font-size: var(--fz-lg);
+    font-weight: 600;
+
+    line-height: 1.45;
+
+    transition:
+        color 0.3s ease;
+}
+
+
+/* =========================================
+   PROJECT DESCRIPTION
+   ========================================= */
+
+.description {
+    max-width: 360px;
+
+    color: var(--slate);
+
+    font-size: var(--fz-sm);
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   TECHNOLOGY COLUMN
+   ========================================= */
+
+.tech {
+    min-width: 300px;
+}
+
+
+/* =========================================
+   TECHNOLOGY TAGS
+   ========================================= */
+
+.tech-tag {
+    position: relative;
+
+    display: inline-block;
+
+    overflow: hidden;
+
+    margin-right: 8px;
+    margin-bottom: 6px;
+
+    padding: 6px 12px;
+
+    border:
+        1px solid
+        rgba(139, 92, 246, 0.12);
+
+    border-radius: 9999px;
+
+    background-color:
+        rgba(139, 92, 246, 0.08);
+
+    color: var(--green);
+
+    font-family: var(--font-mono);
+    font-size: var(--fz-xs);
+
+    line-height: 1;
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Tech tag hover */
+
+.tech-tag:hover {
+    transform: translateY(-3px);
+
+    background-color:
+        rgba(139, 92, 246, 0.16);
+
+    border-color:
+        rgba(139, 92, 246, 0.4);
+
+    box-shadow:
+        0 5px 18px
+        rgba(139, 92, 246, 0.12);
+}
+
+
+.tech-tag:not(:last-child)::after {
+    content: none;
+}
+
+
+/* =========================================
+   PROJECT LINKS
+   ========================================= */
+
+.project-link {
+    white-space: nowrap;
+}
+
+
+.project-link a,
+.links a {
+    color: var(--light-slate);
+
+    font-family: var(--font-mono);
+    font-size: var(--fz-sm);
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s
+        var(--motion-smooth);
+}
+
+
+.project-link a:hover,
+.links a:hover {
+    color: var(--green);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   MOBILE VISIBILITY
+   ========================================= */
+
+.hide-on-mobile {
+    display: none;
+}
+
+
+@media (min-width: 768px) {
+
+    .hide-on-mobile {
+        display: table-cell;
+    }
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 1024px) {
+
+    .archive-page {
+        padding:
+            90px 35px;
+    }
+
+    .archive-header {
+        margin-bottom:
+            60px;
+    }
+
+    .tech {
+        min-width:
+            250px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 767px) {
+
+    .archive-page {
+        padding:
+            70px 22px;
+    }
+
+
+    /* Header */
+
+    .archive-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        margin-bottom:
+            45px;
+    }
+
+
+    /* Back link */
+
+    .back-link {
+        margin-bottom:
+            24px;
+
+        font-size:
+            var(--fz-sm);
+    }
+
+
+    /* Main heading */
+
+    .big-heading {
+        display: block;
+
+        margin:
+            0 0 30px 0;
+
+        font-size:
+            clamp(
+                38px,
+                12vw,
+                52px
+            );
+
+        line-height:
+            1.05;
+    }
+
+
+    /* Subtitle */
+
+    .subtitle {
+        margin:
+            0;
+
+        font-size:
+            var(--fz-xs);
+
+        line-height:
+            1.7;
+    }
+
+
+    /* Table */
+
+    .archive-content th,
+    .archive-content td {
+        padding:
+            15px 10px;
+    }
+
+
+    .archive-content th {
+        font-size:
+            var(--fz-xxs);
+    }
+
+
+    .archive-content td {
+        font-size:
+            var(--fz-sm);
+    }
+
+
+    .title {
+        font-size:
+            var(--fz-md);
+    }
+
+
+    /* Disable year movement on mobile */
+
+    .archive-content tbody tr:hover td:first-child {
+        padding-left:
+            10px;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    .archive-page {
+        padding:
+            60px 16px;
+    }
+
+
+    .big-heading {
+        font-size:
+            40px;
+    }
+
+
+    .archive-header {
+        margin-bottom:
+            40px;
+    }
+}
+
+
+/* =========================================
+   REDUCED MOTION ACCESSIBILITY
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .back-link,
+    .archive-content tbody tr,
+    .archive-content tbody td:first-child,
+    .title,
+    .tech-tag,
+    .project-link a,
+    .links a {
+        transition: none;
+    }
+
+
+    .back-link:hover,
+    .tech-tag:hover,
+    .project-link a:hover,
+    .links a:hover {
+        transform: none;
+    }
+}

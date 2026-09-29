@@ -1,0 +1,142 @@
+/* -------------------------------- */
+/* Identity Motion                  */
+/* -------------------------------- */
+
+.identity {
+    position: relative;
+}
+
+.sidebar h1 {
+    position: relative;
+
+    display: inline-block;
+}
+
+.identity-signal {
+    display: block;
+
+    width: 0;
+    height: 2px;
+
+    margin:
+        10px 0
+        22px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--violet),
+            var(--violet-light),
+            transparent
+        );
+
+    animation:
+        identitySignal
+        1.2s
+        var(--motion-smooth)
+        0.2s
+        forwards;
+}
+
+@keyframes identitySignal {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+
+    to {
+        width: 120px;
+        opacity: 1;
+    }
+}
+
+.identity-focus {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    color: var(--slate);
+
+    font-size: var(--fz-md);
+}
+
+.identity-focus span {
+    color: var(--green);
+}
+
+/* -------------------------------- */
+/* Navigation Motion                */
+/* -------------------------------- */
+
+.nav-link {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    width: fit-content;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s
+        var(--motion-smooth);
+}
+
+.nav-link::before {
+    content: "";
+
+    width: 0;
+    height: 1px;
+
+    margin-right: 0;
+
+    background:
+        var(--green);
+
+    transition:
+        width 0.35s
+        var(--motion-smooth),
+        margin-right 0.35s
+        var(--motion-smooth);
+}
+
+.nav-link:hover {
+    color: var(--lightest-slate);
+
+    transform:
+        translateX(4px);
+}
+
+.nav-link:hover::before {
+    width: 28px;
+
+    margin-right: 10px;
+}
+
+/* -------------------------------- */
+/* Social Motion                    */
+/* -------------------------------- */
+
+.social-link {
+    transition:
+        color 0.3s ease,
+        transform 0.3s
+        var(--motion-smooth),
+        filter 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--violet-light);
+
+    transform:
+        translateY(-4px);
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(139, 92, 246, 0.35)
+        );
+}

@@ -1,0 +1,11 @@
+{
+    "name": "portfolio-root",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "build": "cd portfolio && npm run build && rm -rf ../dist && cp -r dist ../dist"
+    },
+    "workspaces": [
+        "portfolio"
+    ]
+}

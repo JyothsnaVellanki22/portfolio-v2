@@ -1,0 +1,66 @@
+:root {
+  /* Core Theme */
+  --navy: #121212;
+  --light-navy: #1E1E1E;
+  --lightest-navy: #2D2D2D;
+
+  /* Text */
+  --slate: #A1A1AA;
+  --light-slate: #D4D4D8;
+  --lightest-slate: #F4F4F5;
+  --white: #FFFFFF;
+
+  /* Primary Accent */
+  --green: #8B5CF6;
+
+  /* Extended Violet System */
+  --violet: #8B5CF6;
+  --violet-light: #A78BFA;
+  --violet-dark: #6D28D9;
+
+  --violet-soft: rgba(139, 92, 246, 0.08);
+  --violet-medium: rgba(139, 92, 246, 0.18);
+  --violet-border: rgba(139, 92, 246, 0.28);
+  --violet-glow: rgba(139, 92, 246, 0.20);
+
+  /* Fonts */
+  --font-sans:
+    'Outfit',
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+
+  --font-mono:
+    'JetBrains Mono',
+    'Fira Code',
+    'Roboto Mono',
+    monospace;
+
+  /* Font Sizes */
+  --fz-xxs: 12px;
+  --fz-xs: 13px;
+  --fz-sm: 14px;
+  --fz-md: 16px;
+  --fz-lg: 18px;
+  --fz-xl: 20px;
+  --fz-xxl: 22px;
+  --fz-heading: 32px;
+
+  /* Layout */
+  --border-radius: 8px;
+  --nav-height: 100px;
+  --nav-scroll-height: 70px;
+
+  --tab-height: 42px;
+  --tab-width: 120px;
+
+  /* Motion */
+  --transition:
+    all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  --motion-smooth:
+    cubic-bezier(0.16, 1, 0.3, 1);
+}
